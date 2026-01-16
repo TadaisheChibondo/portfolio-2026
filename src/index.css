@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*Dark theme*/
+body {
+  background-color: #050505;
+  color: #ffffff;
+}
+/* Glitch Animation Keyframes */
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.glitch-hover:hover {
+  animation: glitch 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+  color: #00ff00; /* Turns green on hover */
+  text-shadow: 2px 2px #ff0000, -2px -2px #0000ff; /* Red/Blue split */
+}
+/* Custom Scrollbar for Webkit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505; /* Matches body background */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1a1a1a; /* Dark Grey handle */
+  border: 1px solid #00ff00; /* Neon Green Border */
+  border-radius: 0px; /* Square edges for that "Terminal" look */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00ff00; /* Full Green on hover */
+  box-shadow: 0 0 10px #00ff00; /* Glow effect */
+}
