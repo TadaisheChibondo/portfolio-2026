@@ -40,7 +40,7 @@ const ContactSection = () => {
           </a>
 
           <a
-            href="https://www.linkedin.com/in/tadaishe-chibondo"
+            href="https://www.linkedin.com/in/tadaishe-chibondo-915247349"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-3 bg-white/5 border border-white/10 rounded-full hover:border-blue-500 hover:text-blue-500 transition-all text-white"
