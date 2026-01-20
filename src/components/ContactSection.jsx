@@ -25,7 +25,7 @@ const ContactSection = () => {
           href="mailto:tadaishechibondo@gmail.com"
           className="inline-block px-10 py-4 bg-green-500 text-black font-bold text-xl rounded-sm hover:bg-green-400 hover:scale-105 transition-all mb-16"
         >
-          INITIALIZE_HANDSHAKE()
+          CONTACT_ME......
         </a>
 
         {/* Social Links Grid */}

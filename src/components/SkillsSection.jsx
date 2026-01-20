@@ -1,16 +1,26 @@
 import { motion } from "framer-motion";
-import { Code, Server, Database, Terminal, Cpu, Globe } from "lucide-react";
+import {
+  Code,
+  Server,
+  Database,
+  Terminal,
+  Cpu,
+  Globe,
+  Workflow,
+} from "lucide-react";
 
 const skillCategories = [
   {
-    title: "Backend & Systems",
+    title: "Backend & Automation", // Updated Title
     icon: <Server className="w-6 h-6 text-green-400" />,
     skills: [
-      "Python (Advanced)",
+      "Python (Advanced)", // Specific mention of scripting
       "Django & DRF",
+      "Scripting",
       "Java",
-      "PostgreSQL",
-      "Redis",
+      "Web Scraping (BS4/Selenium)", // NEW SKILL
+      "Task Automation (Cron)", // NEW SKILL
+      "PostgreSQL & Redis",
     ],
   },
   {
@@ -19,20 +29,23 @@ const skillCategories = [
     skills: [
       "React.js",
       "Tailwind CSS",
-      "JavaScript (ES6+)",
+      "Streamlit (Data Apps)", // Added Streamlit here
+      "JavaScript (ES6+) Advanced",
       "Framer Motion",
+      "Responsive Design",
       "Bootstrap",
     ],
   },
   {
-    title: "Data & AI",
+    title: "Data & Algo Trading",
     icon: <Cpu className="w-6 h-6 text-purple-400" />,
     skills: [
       "Pandas & NumPy",
-      "TensorFlow",
-      "Scikit-Learn",
-      "Matplotlib",
+      "Technical Analysis (TA-Lib)",
+      "Rest APIs & JSON",
+      "Matplotlib/Plotly",
       "Jupyter",
+      "TensorFlow",
     ],
   },
   {
@@ -42,8 +55,8 @@ const skillCategories = [
       "Git & GitHub",
       "Docker",
       "Linux (Kali/Ubuntu)",
+      "Bash Scripting", // NEW SKILL
       "Wireshark",
-      "Metasploit",
     ],
   },
 ];

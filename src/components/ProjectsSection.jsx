@@ -7,29 +7,19 @@ import {
   ShoppingBag,
   Home,
   Command,
+  LineChart, // Added for the new project
 } from "lucide-react";
 
-// Updated with Real Links
 const projects = [
   {
-    id: 1,
-    title: "Bot Fleet Commander",
-    category: "High-Frequency Trading",
+    id: 5,
+    title: "Campus Accommodate",
+    category: "Real Estate Tech",
     description:
-      "Real-time telemetry dashboard for managing distributed trading bots. Features WebSocket updates via Pusher, remote 'Kill Switch', and profit tracking.",
-    icon: <Command className="w-10 h-10 text-purple-400" />,
-    tech: ["Next.js", "Redis", "Pusher", "Python"],
-    link: "https://fleet-commander-woad.vercel.app/",
-  },
-  {
-    id: 2,
-    title: "Nhimbe AI",
-    category: "AgriTech AI",
-    description:
-      "An AI-powered chatbot designed to support smallholder farmers in Zimbabwe with real-time agricultural advice.",
-    icon: <Bot className="w-10 h-10 text-blue-400" />,
-    tech: ["Python", "TensorFlow", "NLP"],
-    link: "https://github.com/TadaisheChibondo/NAI",
+      "Housing finder for university students. Features distance calculators, landlord verification, and review systems.",
+    icon: <Home className="w-10 h-10 text-pink-400" />,
+    tech: ["React", "Django", "Google Maps API"],
+    link: "https://campus-accomodation.vercel.app/",
   },
   {
     id: 3,
@@ -42,6 +32,27 @@ const projects = [
     link: "https://campus-market-psi.vercel.app/",
   },
   {
+    id: 0, // Newest Project First
+    title: "Real-Time Crypto Analyzer",
+    category: "FinTech / Data Visualization",
+    description:
+      "Live financial dashboard tracking crypto prices (BTC/ETH) with automated SMA technical analysis and Bullish/Bearish trend flagging.",
+    icon: <LineChart className="w-10 h-10 text-green-400" />,
+    tech: ["Python", "Streamlit", "Plotly", "CoinGecko API"],
+    link: "https://crypto-dashboard-by-tadaishe.streamlit.app/",
+  },
+  {
+    id: 1,
+    title: "Bot Fleet Commander",
+    category: "High-Frequency Trading",
+    description:
+      "Real-time telemetry dashboard for managing distributed trading bots. Features WebSocket updates via Pusher, remote 'Kill Switch', and profit tracking.",
+    icon: <Command className="w-10 h-10 text-purple-400" />,
+    tech: ["Next.js", "Redis", "Pusher", "Python"],
+    link: "https://fleet-commander-woad.vercel.app/",
+  },
+
+  {
     id: 4,
     title: "Algo Trading Bot",
     category: "FinTech / Python",
@@ -52,24 +63,14 @@ const projects = [
     link: "https://tadaishechibondo.github.io/quant-portfolio",
   },
   {
-    id: 5,
-    title: "Campus Accommodate",
-    category: "Real Estate Tech",
+    id: 2,
+    title: "Nhimbe AI",
+    category: "AgriTech AI",
     description:
-      "Housing finder for university students. Features distance calculators, landlord verification, and review systems.",
-    icon: <Home className="w-10 h-10 text-pink-400" />,
-    tech: ["React", "Django", "Google Maps API"],
-    link: "https://campus-accomodation.vercel.app/",
-  },
-  {
-    id: 6,
-    title: "Network Sec Toolkit",
-    category: "Cybersecurity",
-    description:
-      "A suite of scripts for packet sniffing, MAC address verification, and vulnerability scanning on local networks.",
-    icon: <Shield className="w-10 h-10 text-red-400" />,
-    tech: ["Wireshark", "Kali Linux", "Bash"],
-    link: "https://github.com/TadaisheChibondo",
+      "An AI-powered chatbot designed to support smallholder farmers in Zimbabwe with real-time agricultural advice.",
+    icon: <Bot className="w-10 h-10 text-blue-400" />,
+    tech: ["Python", "TensorFlow", "NLP"],
+    link: "https://github.com/TadaisheChibondo/NAI",
   },
 ];
 
@@ -89,7 +90,7 @@ const ProjectsSection = () => {
           <motion.a
             href={project.link}
             target="_blank"
-            rel="noopener noreferrer" // Security best practice
+            rel="noopener noreferrer"
             key={project.id}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}

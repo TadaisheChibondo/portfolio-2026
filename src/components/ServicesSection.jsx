@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Zap, Lock, BarChart3, ArrowRight } from "lucide-react";
+import { Zap, Lock, BarChart3, ArrowRight, Workflow } from "lucide-react"; // Added Workflow icon
 
 const services = [
   {
@@ -14,9 +14,23 @@ const services = [
       "Risk Parameters",
       "Source Code Included",
     ],
-    // Pre-filled WhatsApp Message
     message:
       "Hi Tadaishe, I am interested in your Algorithmic Trading Solutions. I have a strategy I want to automate.",
+  },
+  {
+    title: "Python Automation & Scripting", // NEW SERVICE
+    price: "Starting at $40",
+    description:
+      "Stop doing repetitive tasks. I write custom scripts to scrape data, organize files, and automate your daily workflows.",
+    icon: <Workflow className="w-8 h-8 text-yellow-400" />,
+    features: [
+      "Web Scraping (Data Extraction)",
+      "Excel/PDF Automation",
+      "Scheduled Email Bots",
+      "File System Organization",
+    ],
+    message:
+      "Hi Tadaishe, I need a Python script to automate a repetitive task.",
   },
   {
     title: "Full Stack Web Development",
@@ -58,10 +72,11 @@ const ServicesSection = () => {
         whileInView={{ opacity: 1, x: 0 }}
         className="text-4xl font-bold text-white mb-16 text-center md:text-right"
       >
-        AVAILABLE <span className="text-green-500">PROTOCOLS</span>
+        AVAILABLE <span className="text-green-500">SERVICES</span>
       </motion.h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {/* Changed to grid-cols-2 to balance the 4 services perfectly */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {services.map((service, index) => (
           <motion.div
             key={index}
@@ -95,10 +110,9 @@ const ServicesSection = () => {
               ))}
             </ul>
 
-            {/* The Dynamic Button */}
             <a
               href={`https://wa.me/263789956550?text=${encodeURIComponent(
-                service.message
+                service.message,
               )}`}
               target="_blank"
               rel="noopener noreferrer"
