@@ -7,7 +7,8 @@ import {
   ShoppingBag,
   Home,
   Command,
-  LineChart, // Added for the new project
+  LineChart,
+  Terminal, // <--- 1. Added Terminal Icon for the CLI
 } from "lucide-react";
 
 const projects = [
@@ -32,7 +33,7 @@ const projects = [
     link: "https://campus-market-psi.vercel.app/",
   },
   {
-    id: 0, // Newest Project First
+    id: 0,
     title: "Real-Time Crypto Analyzer",
     category: "FinTech / Data Visualization",
     description:
@@ -40,6 +41,16 @@ const projects = [
     icon: <LineChart className="w-10 h-10 text-green-400" />,
     tech: ["Python", "Streamlit", "Plotly", "CoinGecko API"],
     link: "https://crypto-dashboard-by-tadaishe.streamlit.app/",
+  },
+  {
+    id: 6, // Newest Project
+    title: "Ops Automation CLI",
+    category: "DevTools / System Engineering",
+    description:
+      "A modular CLI tool for developer productivity. Features include automated file system organization, secure project backups (Vault), and a generic web scraper.",
+    icon: <Terminal className="w-10 h-10 text-yellow-400" />,
+    tech: ["Python", "Typer", "Rich", "BeautifulSoup"],
+    link: "https://github.com/TadaisheChibondo/ops-cli-tool",
   },
   {
     id: 1,
@@ -51,7 +62,6 @@ const projects = [
     tech: ["Next.js", "Redis", "Pusher", "Python"],
     link: "https://fleet-commander-woad.vercel.app/",
   },
-
   {
     id: 4,
     title: "Algo Trading Bot",
