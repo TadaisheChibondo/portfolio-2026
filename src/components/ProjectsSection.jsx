@@ -33,6 +33,16 @@ const projects = [
     link: "https://campus-market-psi.vercel.app/",
   },
   {
+    id: 7, // New Flagship Project
+    title: "Ares Terminal Pro",
+    category: "Algo Trading / Quant Finance",
+    description:
+      "Production-grade desktop trading platform. Features a multithreaded execution engine, Monte Carlo risk simulations, and real-time equity charting.",
+    icon: <TrendingUp className="w-10 h-10 text-green-400" />,
+    tech: ["Python", "Flet", "MetaTrader 5", "Pandas"],
+    link: "https://github.com/TadaisheChibondo/AresTradingBot",
+  },
+  {
     id: 0,
     title: "Real-Time Crypto Analyzer",
     category: "FinTech / Data Visualization",
@@ -52,6 +62,7 @@ const projects = [
     tech: ["Python", "Typer", "Rich", "BeautifulSoup"],
     link: "https://github.com/TadaisheChibondo/ops-cli-tool",
   },
+
   {
     id: 1,
     title: "Bot Fleet Commander",
