@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tadaishechibondo.co.zw/sitemap.xml
