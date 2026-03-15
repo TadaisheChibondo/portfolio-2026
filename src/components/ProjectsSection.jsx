@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom"; // <--- 1. Imported Link for routing
 import {
   TrendingUp,
   Bot,
@@ -8,7 +9,7 @@ import {
   Home,
   Command,
   LineChart,
-  Terminal, // <--- 1. Added Terminal Icon for the CLI
+  Terminal,
 } from "lucide-react";
 
 const projects = [
@@ -33,7 +34,7 @@ const projects = [
     link: "https://campus-market-psi.vercel.app/",
   },
   {
-    id: 7, // New Flagship Project
+    id: 7,
     title: "Ares Terminal Pro",
     category: "Algo Trading / Quant Finance",
     description:
@@ -53,7 +54,7 @@ const projects = [
     link: "https://crypto-dashboard-by-tadaishe.streamlit.app/",
   },
   {
-    id: 6, // Newest Project
+    id: 6,
     title: "Ops Automation CLI",
     category: "DevTools / System Engineering",
     description:
@@ -62,7 +63,6 @@ const projects = [
     tech: ["Python", "Typer", "Rich", "BeautifulSoup"],
     link: "https://github.com/TadaisheChibondo/ops-cli-tool",
   },
-
   {
     id: 1,
     title: "Bot Fleet Commander",
@@ -71,7 +71,8 @@ const projects = [
       "Real-time telemetry dashboard for managing distributed trading bots. Features WebSocket updates via Pusher, remote 'Kill Switch', and profit tracking.",
     icon: <Command className="w-10 h-10 text-purple-400" />,
     tech: ["Next.js", "Redis", "Pusher", "Python"],
-    link: "https://fleet-commander-woad.vercel.app/",
+    link: "/case-study/bot-fleet", // <--- 2. Changed to internal route
+    isInternal: true, // <--- 3. Added flag to identify internal links
   },
   {
     id: 4,
@@ -107,49 +108,68 @@ const ProjectsSection = () => {
       </motion.h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project, index) => (
-          <motion.a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            key={project.id}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
-            whileHover={{ scale: 1.03 }}
-            className="group block relative p-6 rounded-xl border border-white/10 bg-gray-900/40 backdrop-blur-md overflow-hidden hover:border-green-500/50 transition-colors cursor-pointer"
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+        {projects.map((project, index) => {
+          // 4. Define the Card UI once so we don't repeat code
+          const CardContent = (
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ scale: 1.03 }}
+              // Added flex and flex-col to make cards uniform height
+              className="group relative p-6 rounded-xl border border-white/10 bg-gray-900/40 backdrop-blur-md overflow-hidden hover:border-green-500/50 transition-colors cursor-pointer h-full flex flex-col"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
-            <div className="flex justify-between items-start mb-4">
-              <div className="p-3 bg-white/5 rounded-lg border border-white/10 group-hover:border-green-500/30 transition-colors">
-                {project.icon}
+              <div className="flex justify-between items-start mb-4">
+                <div className="p-3 bg-white/5 rounded-lg border border-white/10 group-hover:border-green-500/30 transition-colors">
+                  {project.icon}
+                </div>
+                <ExternalLink className="w-5 h-5 text-gray-500 group-hover:text-green-500 transition-colors" />
               </div>
-              <ExternalLink className="w-5 h-5 text-gray-500 group-hover:text-green-500 transition-colors" />
-            </div>
 
-            <h3 className="text-2xl font-bold text-white mb-2">
-              {project.title}
-            </h3>
-            <p className="text-green-400 text-sm mb-4 font-mono">
-              {project.category}
-            </p>
-            <p className="text-gray-400 text-sm mb-6 leading-relaxed">
-              {project.description}
-            </p>
+              <h3 className="text-2xl font-bold text-white mb-2">
+                {project.title}
+              </h3>
+              <p className="text-green-400 text-sm mb-4 font-mono">
+                {project.category}
+              </p>
 
-            <div className="flex flex-wrap gap-2">
-              {project.tech.map((tech) => (
-                <span
-                  key={tech}
-                  className="px-3 py-1 text-xs font-medium text-gray-300 bg-white/5 rounded-full border border-white/5"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </motion.a>
-        ))}
+              {/* Added flex-grow so the description pushes tags to the bottom */}
+              <p className="text-gray-400 text-sm mb-6 leading-relaxed flex-grow">
+                {project.description}
+              </p>
+
+              <div className="flex flex-wrap gap-2 mt-auto">
+                {project.tech.map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-3 py-1 text-xs font-medium text-gray-300 bg-white/5 rounded-full border border-white/5"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          );
+
+          // 5. Wrap conditionally based on isInternal flag
+          return project.isInternal ? (
+            <Link to={project.link} key={project.id} className="block h-full">
+              {CardContent}
+            </Link>
+          ) : (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={project.id}
+              className="block h-full"
+            >
+              {CardContent}
+            </a>
+          );
+        })}
       </div>
     </div>
   );
