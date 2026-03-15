@@ -53,15 +53,30 @@ const HeroSection = () => {
       </div>
 
       {/* 3. Call to Action */}
-      <motion.a
-        href="#projects"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
-        className="px-8 py-3 border border-green-500 text-green-500 font-mono text-lg hover:bg-green-500 hover:text-black transition-all duration-300 rounded-sm"
-      >
-        VIEW_PROJECTS()
-      </motion.a>
+      <div className="flex flex-col sm:flex-row gap-6 mt-12">
+        {/* Primary CTA (Existing, Stacked on Mobile) */}
+        <motion.a
+          href="#projects"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 1 }}
+          className="px-8 py-3 border border-green-500 text-green-500 font-mono text-lg hover:bg-green-500 hover:text-black transition-all duration-300 rounded-sm"
+        >
+          VIEW_PROJECTS()
+        </motion.a>
+
+        {/* Secondary CTA (Resume, Grey Styling) */}
+        <motion.a
+          href="/TC_Resume_2026.pdf" // Direct link to your file in 'public'
+          download="Tadaishe_Chibondo_Resume.pdf" // Triggers download with this filename
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2, duration: 1 }} // Slight stagger delay
+          className="px-8 py-3 border border-gray-500 text-gray-300 font-mono text-lg hover:bg-white hover:text-black transition-all duration-300 rounded-sm"
+        >
+          DOWNLOAD_CV()
+        </motion.a>
+      </div>
     </div>
   );
 };
