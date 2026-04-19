@@ -1,16 +1,53 @@
-# React + Vite
+# TC_DEV // Personal Portfolio & Terminal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **Live Deployment:** [tadaishechibondo.co.zw](https://tadaishechibondo.co.zw)
 
-Currently, two official plugins are available:
+A responsive, single-page developer portfolio designed with a "Sentient System" aesthetic. Built to showcase full-stack projects, algorithmic trading telemetry, and cybersecurity audits. Features dynamic routing for detailed project case studies and a friction-free client contact pipeline.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ⚙️ System Architecture (Tech Stack)
 
-## React Compiler
+- **Framework:** React.js + Vite
+- **Styling:** Tailwind CSS
+- **Routing:** React Router v6 (Dynamic Case Studies)
+- **Animation:** Framer Motion (Glassmorphism & Scroll triggers)
+- **Visuals:** tsParticles (Interactive neural network background)
+- **Icons:** Lucide React
+- **Deployment:** Vercel
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Key Features
 
-## Expanding the ESLint configuration
+- **Dynamic Case Studies:** Centralized JSON database (`src/data/projects.jsx`) dynamically generates dedicated project pages with theme-matching colors.
+- **Direct Handshake Protocol:** Service buttons auto-generate pre-filled WhatsApp messages for immediate client onboarding.
+- **Responsive Glassmorphism:** CSS backdrop-filters layered over an interactive canvas background.
+- **Live File Distribution:** Direct PDF download integration for resume access.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 💻 Local Initialization
+
+To run this protocol locally on your machine:
+
+1. **Clone the repository:**
+
+```
+    git clone [https://github.com/TadaisheChibondo/portfolio-2026.git](https://github.com/TadaisheChibondo/portfolio-2026.git)
+```
+
+Navigate to the directory:
+
+```
+    cd portfolio-2026
+```
+
+Install dependencies:
+
+```
+    npm install
+```
+
+Initialize the local server:
+
+```
+    npm run dev
+```
+
+🔒 Status
+Active / Maintained - Continuously updated with new case studies and system optimizations.
