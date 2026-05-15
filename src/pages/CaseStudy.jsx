@@ -31,6 +31,8 @@ const CaseStudy = () => {
     "text-pink-500": { bg: "bg-pink-500", text: "text-pink-500" },
     "text-orange-500": { bg: "bg-orange-500", text: "text-orange-500" },
     "text-yellow-400": { bg: "bg-yellow-400", text: "text-yellow-400" },
+    "text-red-500": { bg: "bg-red-500", text: "text-red-500" },
+    "text-cyan-400": { bg: "bg-cyan-400", text: "text-cyan-400" },
   };
 
   // Default to green if something goes wrong

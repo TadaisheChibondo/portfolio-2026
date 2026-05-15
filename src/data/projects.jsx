@@ -7,9 +7,57 @@ import {
   Command,
   LineChart,
   Terminal,
+  Rocket, // Added for Resume Blast
+  Gamepad2, // Added for Exodus Engine
 } from "lucide-react";
 
 export const projectsData = [
+  {
+    id: "exodus-engine",
+    title: "Exodus Engine",
+    category: "Productivity / AI Gamification",
+    description:
+      "A gamified, offline-first productivity platform with RPG mechanics, a physics-driven UI, and AI-generated skill roadmaps.",
+    icon: <Gamepad2 className="w-10 h-10 text-red-500" />,
+    tech: ["React", "WatermelonDB", "Zustand", "C++"],
+    liveLink: "https://exodus-engine.vercel.app",
+    githubLink: "https://github.com/TadaisheChibondo",
+    isInternal: true,
+    themeColor: "text-red-500",
+    shadowColor: "rgba(239,68,68,0.15)",
+    image: "/exodus-engine.png",
+    details: {
+      objective:
+        "Standard to-do lists fail to maintain long-term engagement. Exodus Engine was built to transform personal productivity into an RPG, tying real-world tasks to virtual 'needs', survival mechanics, and an overarching progression system.",
+      architecture:
+        "Engineered with a strict offline-first architecture utilizing a C++ backed WatermelonDB for ultra-fast local data syncing, with Zustand managing complex global states. The UI is physics-driven, and it interfaces with AI to dynamically generate custom skill-tree roadmaps.",
+      challenge:
+        "Maintaining the 'heartbeat' of the gamified system offline. I had to design a background execution model where tasks and time decay impact virtual stats continuously, triggering push notifications and altering state without relying on a constant server connection.",
+    },
+  },
+  {
+    id: "resume-blast",
+    title: "Resume Blast",
+    category: "Desktop App / Automation",
+    description:
+      "Windows desktop tool automating bulk, personalized internship applications using Gemini AI and a cryptographic licensing system.",
+    icon: <Rocket className="w-10 h-10 text-cyan-400" />,
+    tech: ["Electron", "React", "Django", "Gemini API"],
+    liveLink: "https://resume-blast.vercel.app",
+    githubLink: "https://github.com/TadaisheChibondo",
+    isInternal: true,
+    themeColor: "text-cyan-400",
+    shadowColor: "rgba(34,211,238,0.15)",
+    image: "/resume-blast.png",
+    details: {
+      objective:
+        "Applying for internships is a numbers game, but generic emails are ignored. I needed a desktop utility to automate bulk applications while ensuring every single email was highly personalized to the specific company based on my CV.",
+      architecture:
+        "A cross-platform desktop application built with Electron and React for the frontend, communicating with a robust Django backend. It integrates the Gemini API to analyze a user's CV against job descriptions and draft custom cover emails on the fly.",
+      challenge:
+        "Building a secure monetization and distribution system for a desktop app. I engineered a cryptographic licensing system to manage user tiers, preventing unauthorized use and ensuring secure API key handling on the client side without exposing secrets.",
+    },
+  },
   {
     id: "bot-fleet",
     title: "Bot Fleet Commander",
@@ -23,7 +71,7 @@ export const projectsData = [
     isInternal: true,
     themeColor: "text-purple-500",
     shadowColor: "rgba(168,85,247,0.15)",
-    image: "/bot-fleet.png", // Add this image to your public folder
+    image: "/bot-fleet.png",
     details: {
       objective:
         "Managing multiple MetaTrader 5 (MT5) bots running on different virtual private servers (VPS) was becoming a logistical nightmare. I needed a centralized 'Command Center' to monitor live equity, active positions, and systemic health across the entire fleet without having to manually log into each server.",
@@ -58,10 +106,10 @@ export const projectsData = [
   },
   {
     id: "campus-acc",
-    title: "Campus Accommodate",
+    title: "Student Housing",
     category: "Real Estate Tech",
     description:
-      "Housing finder for university students. Features distance calculators, landlord verification, and review systems.",
+      "Off campus Housing finder for university students. Features Google Maps GPS integration, landlord verification, and review systems.",
     icon: <Home className="w-10 h-10 text-pink-400" />,
     tech: ["React", "Django", "Google Maps API"],
     liveLink: "https://campus-accomodation.vercel.app/",
@@ -72,7 +120,7 @@ export const projectsData = [
     image: "/campus-acc.png",
     details: {
       objective:
-        "University students in Zimbabwe face massive difficulties finding secure, verified off-campus housing. I built Campus Accommodate to bridge the gap between students and landlords, eliminating predatory agents and providing transparent reviews and location data.",
+        "University students in Zimbabwe face massive difficulties finding secure, verified off-campus housing. I built Student Housing to bridge the gap between students and landlords, eliminating predatory agents and providing transparent reviews and location data.",
       architecture:
         "A decoupled full-stack application. The backend is powered by Django and PostgreSQL, exposing a secure REST API. The frontend is a React application that consumes this API. I integrated the Google Maps API to visually display property locations and calculate walking distances to the university campus.",
       challenge:
@@ -148,7 +196,6 @@ export const projectsData = [
         "Ensuring cross-platform compatibility (Windows vs Linux). File path structures differ greatly between operating systems. I heavily utilized Python's built-in `pathlib` module to ensure directory manipulations and backups worked flawlessly regardless of the underlying OS.",
     },
   },
-  // Adding the two external-only projects so they still show up in the grid
   {
     id: "nhimbe-ai",
     title: "Nhimbe AI",
